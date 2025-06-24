@@ -14,6 +14,10 @@ loader=DirectoryLoader(
     loader_cls=PyPDFLoader
 )
 
-docs=loader.load()
-print(len(docs))
-print(docs)
+# docs=loader.lazy_load()
+# print(len(docs))
+# print(docs)
+docs=loader.lazy_load()
+
+for document in docs:
+    print(document.metadata)
